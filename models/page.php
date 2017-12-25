@@ -68,8 +68,7 @@ class Page extends Model {
 			  title = ?,
 		          content = ?,
 		          is_published = ?
-	            WHERE id = ?
-			
+	            WHERE id = ?	
 		 ";
 
             return $this->db->query($sql, array($alias, $title, $content, $is_published, $id));
