@@ -25,23 +25,22 @@ class Message extends Model {
 
         } else {
 
-            $sql = " 
-	            UPDATE messages
-		       SET name = ?,
-			   email = ?,
-		           message = ?
-		     WHERE id = ?	
+             $sql = "UPDATE messages
+		        SET name = ?,
+			    email = ?,
+		            message = ?
+		      WHERE id = ?	
 		   ";
 
                }
                return $this->db->query($sql, array($name, $email, $message, $id));
 	}
 	
-	public function getList() {
+   public function getList() {
 
-	    $sql = "SELECT * FROM messages ORDER BY 'DESC'";
-	    $this->db->query($sql);
-            return $row = $this->db->results();
+	$sql = "SELECT * FROM messages ORDER BY 'DESC'";
+	$this->db->query($sql);
+        return $row = $this->db->results();
 		
-       }
+   }
 }
