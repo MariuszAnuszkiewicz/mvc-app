@@ -13,7 +13,7 @@ class UsersController extends Controller {
 	
    public function admin_login() {
 		
-	if($_POST && isset($_POST['login']) && isset($_POST['password'])) {
+	if ($_POST && isset($_POST['login']) && isset($_POST['password'])) {
 
             $user = $this->model->getByLogin($_POST['login']);
             $hash = md5(Config::get('salt') . $_POST['password']);
