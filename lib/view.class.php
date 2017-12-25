@@ -24,7 +24,7 @@ class View {
             $template_name = $router->getMethodPrefix() . $router->getAction() . '.php';
 
         }
-		return VIEWS_PATH.DS.$controller_dir.DS.$template_name;
+	return VIEWS_PATH.DS.$controller_dir.DS.$template_name;
    }
 	
    public function __construct($data = array(), $path = null) {
