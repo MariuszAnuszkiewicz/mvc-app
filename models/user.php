@@ -14,7 +14,7 @@ class User extends Model {
             return $result[0];
 
 	}
-	    return false;
+	return false;
    }
 
    public function getByPassword($password) {
