@@ -5,8 +5,8 @@
 <style>
   <?php LoadFile::load(WEBROOT_PATH.DS.'css/style.css'); ?>
 </style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title><?php echo Config::get('site_name') ?></title>
 </head>
@@ -29,16 +29,16 @@
     <div class="container">
        <div class="starter-template">
           <?php
-		    if (Session::hasFlash()) {
-		  ?>
+	    if (Session::hasFlash()) {
+	  ?>
             <div class="alert alert-info" role="alert">
           <?php
              Session::flash();
           ?>
             </div>
           <?php
-		       echo $data['content'];
-		    }
+             echo $data['content'];
+	    }
           ?>
        </div>
     </div>
