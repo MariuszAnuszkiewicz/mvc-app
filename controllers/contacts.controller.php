@@ -13,14 +13,14 @@ class ContactsController extends Controller {
 
    public function index() {
 
-      if($_POST) {
+      if ($_POST) {
 
           $validate = new Validate();
 
-          if($validate->is_empty($validate::input('name'), $validate::input('submit')) ||
-             $validate->min_length($validate::input('name'), 4, $validate::input('submit')) ||
-             $validate->max_length($validate::input('name'), 100, $validate::input('submit')) ||
-             $validate->email($validate::input('email'))) {
+          if ($validate->is_empty($validate::input('name'), $validate::input('submit')) ||
+              $validate->min_length($validate::input('name'), 4, $validate::input('submit')) ||
+              $validate->max_length($validate::input('name'), 100, $validate::input('submit')) ||
+              $validate->email($validate::input('email'))) {
 
                return null;
 
