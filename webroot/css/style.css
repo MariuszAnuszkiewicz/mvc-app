@@ -1,0 +1,233 @@
+
+body{
+
+	padding-top: 50px;
+
+}
+
+form{
+
+	position: absolute;
+	left: 100px;
+	top: 150px;
+	width: 400px;
+	max-width: 400px;
+
+}
+
+.starter-template{
+
+	padding: 40px 15px;
+
+}
+
+h3.label-contact{
+
+	position: absolute;
+	top: 75px;
+	left: 100px;
+
+}
+
+h3.label-login{
+
+	position: absolute;
+	left: 100px;
+
+}
+
+h3.label-admin{
+
+	position: absolute;
+	top: 50px;
+	left: 100px;
+
+}
+
+h3.label-edit{
+
+	position: absolute;
+	top: 80px;
+	left: 100px;
+
+}
+
+h3.add_page{
+
+	position: absolute;
+	top: 75px;
+	left: 95px;
+	display: block;
+	width: 107px;
+	height: 20px;
+
+}
+
+h3.label-login{
+
+	position: absolute;
+	top: 75px;
+	left: 95px;
+	display: block;
+	width: 107px;
+	height: 20px;
+
+}
+
+h3.messages{
+
+	position: absolute;
+	top: 65px;
+	left: 95px;
+	display: block;
+	width: 107px;
+	height: 20px;
+
+}
+
+.table-striped-contacts{
+
+	position: absolute;
+	top: 140px;
+	left: 15px;
+	display: block;
+	width: 45%;
+	height: auto;
+
+}
+
+.pages-list{
+
+	position: absolute;
+	top: 80px;
+	left: 15px;
+	display: block;
+	width: 300px;
+	height: 300px;
+
+}
+
+.alert-info{
+
+	position: absolute;
+	left: 39.5%;
+	top: 55px;
+	width: 400px;
+	max-width: 400px;
+	display: block;
+
+}
+
+.send-success{
+
+	position: absolute;
+	left: 140px;
+	top: 500px;
+
+}
+
+.cell-result{
+
+	position: absolute;
+	left: 70px;
+	top: 210px;
+
+}
+
+.add_btn{
+
+	position: relative;
+	top: 80px;
+	left: 100px;
+
+}
+
+.alert_name{
+
+	width: 500px;
+	display: inline;
+
+}
+
+.alert_name p{
+
+	color: #AA0000;
+	display: inline;
+	margin-top: 10px;
+
+}
+
+.alert_email{
+
+	width: 500px;
+	display: inline;
+
+}
+
+.alert_email p{
+
+	color: #AA0000;
+	display: inline;
+	margin-top: 10px;
+
+}
+
+.alert_login{
+
+	width: 500px;
+	display: inline;
+
+}
+
+.alert_login p{
+
+	color: #AA0000;
+	display: inline;
+	margin-top: 10px;
+
+}
+
+.alert_password{
+
+	width: 500px;
+	display: inline;
+
+}
+
+.alert_password p{
+
+	color: #AA0000;
+	display: inline;
+	margin-top: 10px;
+
+}
+
+button.btn-success{
+
+   position: relative;
+   top: 30px;
+   left: 420px;
+   display: block;
+   width: 80px;
+   height: 30px;
+
+}
+
+.btn-go-back{
+
+	position: absolute;
+	top: 65px;
+	left: 1%;
+	background-color: #413b3b;
+	display: block;
+	width: 65px;
+	height: 30px;
+
+}
+
+.btn-go-back p{
+
+	color: #FFFFFF;
+	padding-top: 2px;
+
+}

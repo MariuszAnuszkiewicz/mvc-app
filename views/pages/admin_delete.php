@@ -1,0 +1,1 @@
+<?php LoadFile::load(WEBROOT_PATH.DS.'btn\back_btn.html'); ?>
