@@ -45,12 +45,12 @@ class PagesController extends Controller {
 
    public function admin_edit() {
 
-	if(isset($this->params[0])) {
+	if (isset($this->params[0])) {
 
             $this->data['edit_pages'] = $this->model->getById($this->params[0]);
             $result = $this->model->save($_POST, $this->params[0]);
 
-            if($_POST) {
+            if ($_POST) {
 
                $result ? Session::setFlash('Page was saved') : Session::setFlash('Error.');
 
@@ -66,7 +66,7 @@ class PagesController extends Controller {
 
     public function admin_delete() {
 
-        if(isset($this->params[0])) {
+        if (isset($this->params[0])) {
 
             $this->model->delete($this->params[0]);
             Session::setFlash('Page was deleted');
