@@ -2,12 +2,13 @@
 
 class Model {
 	
-	protected $db;
+   protected $db;
 	
-	public function __construct() {
+   public function __construct() {
 		
-		$this->db = App::$db;
+      $this->db = App::$db;
 
-	}
+   }
+	
 }
 
