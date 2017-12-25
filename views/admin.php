@@ -24,8 +24,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">  
-            <li><a <?php if (App::getRouter()->getController() == 'pages') { ?> class="active" <?php } ?>href="<?php echo (App::getRouter()->getMethodPrefix() == 'admin') ? './pages' : './pages/' ?>">Pages</a></li>
-            <li><a <?php if (App::getRouter()->getController() == 'contacts') { ?> class="active" <?php } ?>href="<?php echo (App::getRouter()->getController() == 'contacts') ? './contacts' : './contacts' ?>">Contact Us</a></li>
+            <li><a <?php if (App::getRouter()->getController() == 'pages') { ?> class="active" <?php } ?>href="<?php echo (App::getRouter()->getMethodPrefix() == 'admin') ? '../pages/' : './pages/' ?>">Pages</a></li>
+            <li><a <?php if (App::getRouter()->getController() == 'contacts') { ?> class="active" <?php } ?>href="<?php echo (App::getRouter()->getController() == 'contacts') ? '../contacts/' : './contacts' ?>">Contact Us</a></li>
             <li><a href="/admin/users/logout">Logout</a></li>
           </ul>
         </div>
