@@ -1,5 +1,4 @@
-﻿
-<?php $validate = new Validate(); ?>
+﻿<?php $validate = new Validate(); ?>
 
 <h3 class="label-contact">Contact Us</h3>
 

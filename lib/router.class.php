@@ -1,6 +1,6 @@
 ﻿<?php
 
-class Router{
+class Router {
 	
 	protected $uri;
 	protected $controller;
@@ -9,51 +9,50 @@ class Router{
 	protected $route;
 	protected $method_prefix;
 	protected $language;
-	
 
-	public function getUri(){
+	public function getUri() {
 		
 		return $this->uri;
 		
 	}
 	
-	public function getController(){
+	public function getController() {
 		
 		return $this->controller;
 		
 	}
 	
-	public function getAction(){
+	public function getAction() {
 		
 		return $this->action;
 		
 	}
 	
-	public function getParams(){
+	public function getParams() {
 		
 		return $this->params;
 
 	}
 	
-	public function getRoute(){
+	public function getRoute() {
 		
 		return $this->route;
 		
 	}
 	
-	public function getMethodPrefix(){
+	public function getMethodPrefix() {
 		
 		return $this->method_prefix;
 		
 	}
 	
-	public function getLanguage(){
+	public function getLanguage() {
 		
 		return $this->language;
 		
 	}
 	
-	public function __construct($uri){
+	public function __construct($uri) {
 		
 		$this->uri = urldecode(trim($uri, '/'));
 
@@ -66,36 +65,35 @@ class Router{
 
 		$uri_parts = explode('?', $this->uri);
 
-		if($uri_parts){
+		if ($uri_parts) {
 			
-		  $path = $uri_parts[0];
-        
-		  $path_parts = explode('/', $path);
+		    $path = $uri_parts[0];
+		    $path_parts = explode('/', $path);
 
-		if(count($path_parts)){
+		if (count($path_parts)) {
 			
 			// Get route or language at first element
-			if(in_array(strtolower(current($path_parts)), array_keys($routes))){
+			if (in_array(strtolower(current($path_parts)), array_keys($routes))) {
 				
 				$this->route = strtolower(current($path_parts));
 				$this->method_prefix = isset($routes[$this->route]) ? $routes[$this->route] : '';
 				array_shift($path_parts);
 											
-			}elseif(in_array(strtolower(current($path_parts)), Config::get('languages'))){
+			} elseif(in_array(strtolower(current($path_parts)), Config::get('languages'))) {
 				
 				$this->language = strtolower(current($path_parts));
 				array_shift($path_parts);		 
 			}
 			
 			// Get controller next element of array
-			if(current($path_parts)){
+			if (current($path_parts)) {
 				
 				 $this->controller = strtolower(current($path_parts));
 				 array_shift($path_parts);
 				
 			}
 
-			if(current($path_parts)){
+			if (current($path_parts)) {
 				
 				 $this->action = strtolower(current($path_parts));
 			     array_shift($path_parts);
@@ -109,13 +107,13 @@ class Router{
 
 	}
 	
-	public static function redirect($location){
+	public static function redirect($location) {
 		
 		header("Location: $location");
 		
 	}
 
-} // end class
+}
 
 
 

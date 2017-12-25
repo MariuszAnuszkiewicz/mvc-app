@@ -1,12 +1,12 @@
 ﻿<?php
 
-class Page extends Model{
+class Page extends Model {
 	
-	public function getList($only_published = false){
+	public function getList($only_published = false) {
 
 		$sql = "SELECT * FROM pages";
 		 
-		if($only_published){
+		if ($only_published) {
 			
 			$sql .= ' AND is_published = 1';
 		}
@@ -15,7 +15,7 @@ class Page extends Model{
 
 	}
 	
-	public function getByAlias($alias){
+	public function getByAlias($alias) {
 		
 		$alias = $this->db->escape($alias);
 		$sql = "SELECT * FROM pages WHERE alias = ? limit 1";
@@ -26,10 +26,9 @@ class Page extends Model{
 
             return $row[$i];
         }
-
 	}
 	
-	public function getById($id){
+	public function getById($id) {
 		
         $id = (int)$id;
 		$sql = "SELECT * FROM pages WHERE id = ? limit 1";
@@ -40,12 +39,11 @@ class Page extends Model{
 
             return $row[$i];
         }
-		
 	}
 	
-	public function save($data, $id = null){
+	public function save($data, $id = null) {
 		
-		if(!isset($data['alias']) || !isset($data['title']) || !isset($data['content'])){
+		if (!isset($data['alias']) || !isset($data['title']) || !isset($data['content'])) {
 			
 			return false;
 			
@@ -57,7 +55,7 @@ class Page extends Model{
 		$content =  $this->db->escape($data['content']);
         $is_published = isset($data['is_published']) ? 1 : 0;
 		
-		if(!$id){ 
+		if (!$id) {
 		
            $sql = "INSERT INTO pages
 			              SET alias = ?,
@@ -68,7 +66,7 @@ class Page extends Model{
 
             return $this->db->query($sql, array($alias, $title, $content, $is_published));
 
-		}else{
+		} else {
 
 		   $sql = "
 			 
@@ -83,10 +81,9 @@ class Page extends Model{
 
             return $this->db->query($sql, array($alias, $title, $content, $is_published, $id));
 		}
-
 	}
 
-	public function delete($id){
+	public function delete($id) {
 
 		$id = (int)$id;
 		$sql = "DELETE FROM pages WHERE id = ?";
@@ -94,7 +91,6 @@ class Page extends Model{
         return $this->db->results();
 		
 	}
-
 }
 
 

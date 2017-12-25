@@ -1,23 +1,23 @@
 ﻿<?php
 
-class Session{
+class Session {
 	
 	protected static $flash_message;
 	
 	
-	public static function setFlash($message){
+	public static function setFlash($message) {
 
 		self::$flash_message = $message;
 		
 	}
 	
-	public static function hasFlash(){
+	public static function hasFlash() {
 		
 		return !is_null(self::$flash_message);
 		
 	}
 	
-	public static function flash(){
+	public static function flash() {
 		
 		echo self::$flash_message;
 		
@@ -25,15 +25,15 @@ class Session{
 		
 	}
 	
-	public static function set($key, $value){
+	public static function set($key, $value) {
 		
 		$_SESSION[$key] = $value;
 			
 	}
 	
-	public static function get($key){
+	public static function get($key) {
 		
-		if(isset($_SESSION[$key])){
+		if (isset($_SESSION[$key])) {
 			
 		   return $_SESSION[$key];
 		   
@@ -42,9 +42,9 @@ class Session{
 		return null;
 	}
 	
-	public static function delete($key){
+	public static function delete($key) {
 		
-		if(isset($_SESSION[$key])){
+		if (isset($_SESSION[$key])) {
 			
 		   unset($_SESSION[$key]);
 		   
@@ -52,11 +52,10 @@ class Session{
 		
 	}
 	
-	public static function destroy(){
+	public static function destroy() {
 		
 		session_destroy();
 		
 	}
-	
 }
 

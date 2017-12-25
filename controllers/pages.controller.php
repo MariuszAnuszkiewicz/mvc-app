@@ -1,27 +1,23 @@
 ﻿<?php
 
-class PagesController extends Controller
-{
+class PagesController extends Controller {
 
     protected $model;
 
-    public function __construct($data = array())
-    {
+    public function __construct($data = array()) {
 
         parent::__construct($data = array());
         $this->model = new Page();
 
     }
 
-    public function index()
-    {
+    public function index() {
 
         $this->data['pages_list'] = $this->model->getList();
 
     }
 
-    public function view()
-    {
+    public function view() {
 
         if (isset($this->params[0])) {
 
@@ -31,14 +27,13 @@ class PagesController extends Controller
         }
     }
 
-    public function admin_index()
-    {
+    public function admin_index() {
 
         $this->data['admin_zone'] = $this->model->getList();
 
     }
 
-    public function admin_add(){
+    public function admin_add() {
 
         if ($_POST) {
 
@@ -48,9 +43,9 @@ class PagesController extends Controller
         }
     }
 
-	public function admin_edit(){
+	public function admin_edit() {
 
-	    if(isset($this->params[0])){
+	    if(isset($this->params[0])) {
 
 		    $this->data['edit_pages'] = $this->model->getById($this->params[0]);
             $result = $this->model->save($_POST, $this->params[0]);
@@ -61,7 +56,7 @@ class PagesController extends Controller
 
             }
 
-	    }else{
+	    } else {
 
 		     Session::setFlash('Wrong page id.');
              Router::redirect('/admin/pages/');
@@ -69,7 +64,7 @@ class PagesController extends Controller
 	    }
 	}
 
-    public function admin_delete(){
+    public function admin_delete() {
 
         if(isset($this->params[0])) {
 

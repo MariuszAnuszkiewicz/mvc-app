@@ -19,8 +19,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a <?php if(App::getRouter()->getController() == 'pages'){ ?> class="pages" <?php } ?>href="<?php echo (App::getRouter()->getAction() == 'view') ? '../' : '../pages/' ?>">Pages</a></li>
-            <li><a <?php if(App::getRouter()->getController() == 'contacts'){ ?> class="contacts" <?php } ?>href="<?php echo (App::getRouter()->getController() == 'contacts') ? '../contacts/' : '../contacts/' ?>">Contact Us</a></li>
+            <li><a <?php if (App::getRouter()->getController() == 'pages'){ ?> class="pages" <?php } ?>href="<?php echo (App::getRouter()->getAction() == 'view') ? '../' : '../pages/' ?>">Pages</a></li>
+            <li><a <?php if (App::getRouter()->getController() == 'contacts'){ ?> class="contacts" <?php } ?>href="<?php echo (App::getRouter()->getController() == 'contacts') ? '../contacts/' : '../contacts/' ?>">Contact Us</a></li>
           </ul>
         </div>
       </div>
@@ -29,7 +29,7 @@
     <div class="container">
        <div class="starter-template">
           <?php
-		    if(Session::hasFlash()){
+		    if (Session::hasFlash()) {
 		  ?>
             <div class="alert alert-info" role="alert">
           <?php

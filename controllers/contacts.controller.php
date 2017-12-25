@@ -1,17 +1,17 @@
 ﻿<?php
 
-class ContactsController extends Controller{
+class ContactsController extends Controller {
 	
 	protected $model;
 
-	public function __construct($data = array()){
+	public function __construct($data = array()) {
 		
         parent::__construct($data = array());
         $this->model = new Message();
 
 	}
 
-    public function index(){
+    public function index() {
 
         if($_POST) {
 
@@ -24,7 +24,7 @@ class ContactsController extends Controller{
 
                return null;
 
-            }else {
+            } else {
 
                 $this->model->save($_POST);
             }
@@ -32,13 +32,11 @@ class ContactsController extends Controller{
             Session::flash();
 
         }
-
 	}
 
-	public function admin_index(){
+	public function admin_index() {
 
 		$this->data['messages'] = $this->model->getList();
 		
 	}
-
 }

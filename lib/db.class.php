@@ -1,6 +1,6 @@
 ﻿<?php
 
-class DB{
+class DB {
 
     private $_pdo,
             $_query,
@@ -8,32 +8,32 @@ class DB{
             $_results,
             $_count = 0;
 
-    public function __construct($db_host, $db_name, $db_username, $db_password){
+    public function __construct($db_host, $db_name, $db_username, $db_password) {
 
         $db_username = Config::get('db.user');
         $db_password = Config::get('db.password');
         $dsn = 'mysql:dbname=' . $db_name . ';host=' . $db_host .'';
 
-        try{
+        try {
 
             $this->_pdo = new PDO($dsn, $db_username, $db_password);
 
-        }catch(PDOException $e){
+        } catch(PDOException $e) {
 
             echo "Failed to connect to Database";
             die($e->getMessage());
 
         }
 
-    } // end method
+    }
 
-    public function escape($data){
+    public function escape($data) {
 
         return htmlentities($data, ENT_QUOTES);
 
-    } // end method
+    }
 
-    public function query($sql, $params = array()){
+    public function query($sql, $params = array()) {
 
         if (!empty($params)) {
 
@@ -70,18 +70,18 @@ class DB{
             }
             return $this;
 
-        }else{
+        } else {
 
             $this->_error = false;
 
-                if ($this->_query = $this->_pdo->prepare($sql)){
+                if ($this->_query = $this->_pdo->prepare($sql)) {
 
-                    if ($this->_query->execute()){
+                    if ($this->_query->execute()) {
 
                         $this->_results = $this->_query->fetchAll(PDO::FETCH_ASSOC);
                         $this->_count = $this->_query->rowCount();
 
-                    }else{
+                    } else {
 
                         $this->_error = true;
                     }
@@ -129,10 +129,9 @@ class DB{
 
     }
 
-    public function error(){
+    public function error() {
 
         return $this->_error;
 
-    } // end method
-
-} // end class
+    }
+}

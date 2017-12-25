@@ -1,17 +1,17 @@
 ﻿<?php
 
-class UsersController extends Controller{
+class UsersController extends Controller {
 
     protected $model;
 
-	public function __construct($data = array()){
+	public function __construct($data = array()) {
 
         parent::__construct($data);
         $this->model = new User();
 
 	}
 	
-	public function admin_login(){
+	public function admin_login() {
 		
 		if($_POST && isset($_POST['login']) && isset($_POST['password'])) {
 
@@ -22,20 +22,18 @@ class UsersController extends Controller{
 
                 Session::set('login', $user['login']);
                 Session::set('role', $user['role']);
-
                 Router::redirect('/admin/');
 
             }
         }
 	}
 
-	public function admin_logout(){
+	public function admin_logout() {
 		
 		Session::destroy();
 		Router::redirect('/admin/');
 
 	}
-
 }
 
 
