@@ -2,41 +2,41 @@
 
 class ContactsController extends Controller {
 	
-	protected $model;
+   protected $model;
 
-	public function __construct($data = array()) {
+   public function __construct($data = array()) {
 		
-        parent::__construct($data = array());
-        $this->model = new Message();
+       parent::__construct($data = array());
+       $this->model = new Message();
 
-	}
+   }
 
-    public function index() {
+   public function index() {
 
-        if($_POST) {
+      if($_POST) {
 
-            $validate = new Validate();
+          $validate = new Validate();
 
-           if($validate->is_empty($validate::input('name'), $validate::input('submit')) ||
-              $validate->min_length($validate::input('name'), 4, $validate::input('submit')) ||
-              $validate->max_length($validate::input('name'), 100, $validate::input('submit')) ||
-              $validate->email($validate::input('email'))) {
+          if($validate->is_empty($validate::input('name'), $validate::input('submit')) ||
+             $validate->min_length($validate::input('name'), 4, $validate::input('submit')) ||
+             $validate->max_length($validate::input('name'), 100, $validate::input('submit')) ||
+             $validate->email($validate::input('email'))) {
 
                return null;
 
-            } else {
+          } else {
 
-                $this->model->save($_POST);
-            }
-            Session::setFlash('Thank you! Your message was sent successfully');
-            Session::flash();
+              $this->model->save($_POST);
+          }
+           Session::setFlash('Thank you! Your message was sent successfully');
+           Session::flash();
+	      
+      }
+   }
 
-        }
-	}
+   public function admin_index() {
 
-	public function admin_index() {
-
-		$this->data['messages'] = $this->model->getList();
+	$this->data['messages'] = $this->model->getList();
 		
-	}
+   }
 }
