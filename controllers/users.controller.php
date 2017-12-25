@@ -20,9 +20,9 @@ class UsersController extends Controller {
 
         if ($user && $user['is_active'] && $hash === $user['password']) {
 
-                Session::set('login', $user['login']);
-                Session::set('role', $user['role']);
-                Router::redirect('/admin/');
+            Session::set('login', $user['login']);
+            Session::set('role', $user['role']);
+            Router::redirect('/admin/');
 		
         }
      }
