@@ -2,30 +2,30 @@
 
 class PagesController extends Controller {
 
-    protected $model;
+   protected $model;
 
-    public function __construct($data = array()) {
+   public function __construct($data = array()) {
 
         parent::__construct($data = array());
         $this->model = new Page();
 
-    }
+   }
 
-    public function index() {
+   public function index() {
 
         $this->data['pages_list'] = $this->model->getList();
 
-    }
+   }
 
-    public function view() {
+   public function view() {
 
-        if (isset($this->params[0])) {
+       if (isset($this->params[0])) {
 
-            $alias = strtolower($this->params[0]);
-            $this->data['columns'] = $this->model->getByAlias($alias);
+           $alias = strtolower($this->params[0]);
+           $this->data['columns'] = $this->model->getByAlias($alias);
 
-        }
-    }
+       }
+   }
 
     public function admin_index() {
 
@@ -43,11 +43,11 @@ class PagesController extends Controller {
         }
     }
 
-	public function admin_edit() {
+   public function admin_edit() {
 
-	    if(isset($this->params[0])) {
+	if(isset($this->params[0])) {
 
-		    $this->data['edit_pages'] = $this->model->getById($this->params[0]);
+            $this->data['edit_pages'] = $this->model->getById($this->params[0]);
             $result = $this->model->save($_POST, $this->params[0]);
 
             if($_POST) {
@@ -56,13 +56,13 @@ class PagesController extends Controller {
 
             }
 
-	    } else {
+        } else {
 
-		     Session::setFlash('Wrong page id.');
+	     Session::setFlash('Wrong page id.');
              Router::redirect('/admin/pages/');
 
-	    }
-	}
+        }
+   }
 
     public function admin_delete() {
 
