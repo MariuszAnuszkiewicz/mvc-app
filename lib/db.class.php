@@ -12,7 +12,7 @@ class DB {
 
         $db_username = Config::get('db.user');
         $db_password = Config::get('db.password');
-        $dsn = 'mysql:dbname=' . $db_name . ';host=' . $db_host .'';
+        $dsn = 'mysql:host=' . $db_host . ';dbname=' . $db_name .'';
 
         try {
 
@@ -20,11 +20,10 @@ class DB {
 
         } catch(PDOException $e) {
 
-            echo "Failed to connect to Database";
-            die($e->getMessage());
-
+            echo "Failed to connect to Database: " . $e->getMessage();
+            exit;
+            
         }
-
     }
 
     public function escape($data) {
