@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteRule ^$ webroot/ [L]
+  RewriteRule (.*) webroot/index.php [L]
+</IfModule>
