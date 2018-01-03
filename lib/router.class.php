@@ -98,12 +98,12 @@ class Router {
 	      $this->action = strtolower(current($path_parts));
 	      array_shift($path_parts);
 
-           if ($this->controller == 'pages' && preg_match('/[a-zA-Z0-9]/', $this->action)) {
+           if (!$this->method_prefix == 'admin' && $this->controller == 'pages' && preg_match('/[a-zA-Z0-9]/', $this->action)) {
 
                Router::redirect('/pages/');
 
            }
-           if ($this->controller == 'contacts' && preg_match('/[a-zA-Z0-9]/', $this->action)) {
+           if (!$this->method_prefix == 'admin' && $this->controller == 'contacts' && preg_match('/[a-zA-Z0-9]/', $this->action)) {
 
                Router::redirect('/contacts/');
 
